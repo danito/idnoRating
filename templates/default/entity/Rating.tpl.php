@@ -1,10 +1,6 @@
 <?php
 $item =   $vars['object'];	
-
-// echo "<pre>";print_r($item->hashtags);echo "</pre>";
-// echo "<pre>";print_r($item);echo "</pre>";
 $rating = -1;
-//	$rating = $vars['rating']->stars;
 if (!empty($item->hashtags))	{
 	$hashtags = $item->hashtags;
 	$tag = "";
@@ -37,7 +33,6 @@ if (!empty($item->hashtags))	{
 							$star = "fa-star-o e-star";
 						}
 						echo '<i class="fa rating-star '.$star.'"></i>';
-						error_log($i."/".$rating." ".$star);
 					}
 				?>
 					<span class="hidden">
