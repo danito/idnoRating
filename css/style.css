@@ -1,0 +1,22 @@
+
+	.rating-star-o {
+		color: #999;
+		}
+	.rating-star {
+		color: #222;
+	}
+	i.rating {
+		font-size:large;
+	}
+	i.rating:hover {
+		mouse:pointer;
+	}
+	.rating-star-clicked {
+		color:gold;
+	}
+i.e-star {
+	color: #222;
+	}
+i.f-star {
+	color: gold;
+	}
