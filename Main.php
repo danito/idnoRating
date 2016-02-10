@@ -4,7 +4,7 @@ namespace IdnoPlugins\IdnoRating {
   class Main extends \Idno\Common\Plugin {
     
 	/**
-	 * Return the saved rating for an item
+	 * parse hashtags for ratingstars
 	 */
 	static function checkForHashtag($hashtags=array()) {
 		$tag = "";
