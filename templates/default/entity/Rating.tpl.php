@@ -5,7 +5,7 @@ if (!empty($item->hashtags))	{
 	$hashtags = $item->hashtags;
 	$tag = "";
 	foreach ($hashtags as $hashtag) {
-		if (strpos(strtolower($hashtag),'ratingstars') !== 'false') {
+		if (strpos(strtolower($hashtag),'ratingstars') !== false) {
 			$rating = preg_replace('/\D/','',$hashtag);
 			$tag = $hashtag;
 			if (empty($rating)){
