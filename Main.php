@@ -6,19 +6,26 @@ namespace IdnoPlugins\IdnoRating {
 	/**
 	 * Return the saved rating for an item
 	 */
-	static function getRatingForId($id) {
-	    if ($result = \Idno\Core\site()->db()->getObjects('IdnoPlugins\IdnoRating\Rating', ['ratingId' => $id]))
-		return $result;
-
-	    return false;
-	}
+	static function checkForHashtag($hashtags=array()) {
+		$tag = "";
+		$rating = -1;
+		foreach ($hashtags as $hashtag){ 
+			$pos = 	stripos($hashtag,'ratingstars') ; 
+			if ($pos !== false) {
+				$rating = preg_replace('/\D/','',$hashtag);
+				$tag = $hashtag;
+				if (empty($rating)){
+					$rating = -1;
+				}	
+			}
+			if ($rating === -1){
+				return false;
+			} else {
+				return $rating;
+			}	
+		}	
+	}	
 	
-	function saveRating($id){
-		$rating = new Rating();
-		$rating -> ratingId = $id;
-		$rating -> ratingStars = 0;
-		save();
-	}
 
     function registerPages() {
 

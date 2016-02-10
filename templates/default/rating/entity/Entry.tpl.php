@@ -1,15 +1,8 @@
 
 <?php
-/*
-if ($objs = \IdnoPlugins\IdnoRating\Main::getRatingForId($vars['object']->url))
+if ($objs = \IdnoPlugins\IdnoRating\Main::checkForHashtag($vars['object']->hashtags))
 {
-	foreach($objs as $o) {
-		$this->ogp = $o;
 		echo $this->draw('entity/Rating');
-	}
 		
 }
-*/
 
-//echo "<pre>YES PLEASE ";print_r(($vars));echo "</pre>";
-		echo $this->draw('entity/Rating');

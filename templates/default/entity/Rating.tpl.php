@@ -1,22 +1,11 @@
 <?php
-$item =   $vars['object'];	
+$item = $vars['object'];
 $rating = -1;
-if (!empty($item->hashtags))	{
-	$hashtags = $item->hashtags;
-	$tag = "";
-	foreach ($hashtags as $hashtag) {
-		if (strpos(strtolower($hashtag),'ratingstars') !== false) {
-			$rating = preg_replace('/\D/','',$hashtag);
-			$tag = $hashtag;
-			if (empty($rating)){
-				$rating = -1;
-			}	
-		}
+if ($objs = \IdnoPlugins\IdnoRating\Main::checkForHashtag($vars['object']->hashtags))
+{
+	$rating = $objs;	
+}
 
-	}
-	error_log("HASHTAGS ".$tag." ".$rating);
-
- }
 	if ($rating > -1) {
 		
 		?>
@@ -33,6 +22,7 @@ if (!empty($item->hashtags))	{
 							$star = "fa-star-o e-star";
 						}
 						echo '<i class="fa rating-star '.$star.'"></i>';
+						error_log($i."/".$rating." ".$star);
 					}
 				?>
 					<span class="hidden">
