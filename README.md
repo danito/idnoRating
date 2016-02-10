@@ -10,4 +10,4 @@ The hashtag will be hidden after publishing.
 
 
 ###todo
-[] add default hashtag ratingstars to be able to search for all posts with ratings
+- [ ] add default hashtag ratingstars to be able to search for all posts with ratings
